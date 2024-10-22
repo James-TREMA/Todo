@@ -1,90 +1,102 @@
-/* Conteneur principal du formulaire */
-.login-container {
-    width: 300px;
-    margin: 100px auto;
-    padding: 30px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Style pour le titre */
-  h2 {
-    text-align: center;
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
-  /* Style des groupes de champs du formulaire */
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  /* Style des labels */
-  label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #555;
-  }
-  
-  /* Style des champs d'entrée */
-  input[type="text"],
-  input[type="password"] {
+/* Conteneur global avec un arrière-plan subtil */
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f4f7f6;
+}
+
+/* Carte contenant le formulaire */
+.login-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  width: 350px;
+  max-width: 90%;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+/* Titre du formulaire */
+h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+}
+
+/* Conteneur des champs d'entrée */
+.input-container {
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+/* Style des labels */
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #666;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Champs d'entrée modernes */
+input[type="text"], input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #333;
+  font-family: 'Roboto', sans-serif;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+  border-color: #5a67d8; /* Couleur violette moderne */
+  box-shadow: 0 0 8px rgba(90, 103, 216, 0.3);
+  outline: none;
+}
+
+/* Style pour le bouton de soumission */
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #5a67d8;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  font-family: 'Roboto', sans-serif;
+}
+
+.submit-btn:hover {
+  background-color: #434cbb;
+  transform: translateY(-3px);
+}
+
+.submit-btn:disabled {
+  background-color: #d4d4d8;
+  cursor: not-allowed;
+}
+
+/* Messages d'erreur en rouge subtil */
+.error-message {
+  color: #e53e3e;
+  font-size: 13px;
+  margin-top: 8px;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Design responsive */
+@media (max-width: 768px) {
+  .login-card {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    color: #333;
-    box-sizing: border-box;
-    transition: border-color 0.3s;
+    padding: 20px;
   }
-  
-  /* Animation au survol des champs */
-  input[type="text"]:focus,
-  input[type="password"]:focus {
-    border-color: #007bff;
-    outline: none;
-  }
-  
-  /* Style pour le bouton de soumission */
-  button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-  }
-  
-  /* Animation au survol du bouton */
-  button:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
-  }
-  
-  /* Style du bouton lorsqu'il est désactivé */
-  button:disabled {
-    background-color: #cccccc;
-    cursor: not-allowed;
-  }
-  
-  /* Style des messages d'erreur */
-  .error-message {
-    color: red;
-    font-size: 14px;
-    margin-top: 5px;
-  }
-  
-  /* Conteneur du formulaire */
-  form {
-    display: flex;
-    flex-direction: column;
-  }
-  
+}
