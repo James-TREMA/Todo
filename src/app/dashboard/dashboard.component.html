@@ -13,10 +13,11 @@
       <input type="checkbox" [(ngModel)]="task.isCompleted" (change)="toggleTaskCompletion(task)" />
       
       <!-- Titre de la tâche, éditable -->
-      <input type="text" [value]="task.title" (change)="editTask(task, $event.target.value)" />
+      <input type="text" [ngModel]="task.title" (ngModelChange)="editTask(task, $event)" />
   
       <!-- Boutons modifier et supprimer -->
       <button (click)="editTask(task, task.title)">modifié</button>
       <button (click)="deleteTask(i)">supprimé</button>
     </div>
-</div>  
+  </div>
+  
