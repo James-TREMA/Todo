@@ -1,5 +1,5 @@
 /* Conteneur principal avec design épuré et fond léger */
-.dashboard-container {
+.dashboard-custom-container {
     width: 500px;
     margin: 50px auto;
     padding: 30px;
@@ -10,7 +10,7 @@
     transition: all 0.3s ease;
 }
 
-.dashboard-container:hover {
+.dashboard-custom-container:hover {
     transform: scale(1.02);
 }
 
@@ -24,24 +24,24 @@ h2 {
 }
 
 /* Section d'ajout de tâche */
-.add-task-section {
+.dashboard-add-task-section {
     margin-bottom: 30px;
     text-align: center;
 }
 
-.add-task-section h4 {
+.dashboard-add-task-section h4 {
     font-size: 16px;
     color: #333;
     margin-bottom: 10px;
 }
 
-.input-wrapper {
+.dashboard-input-wrapper {
     display: flex;
     justify-content: center;
     gap: 10px;
 }
 
-.add-task-section input {
+.dashboard-add-task-section input {
     padding: 12px;
     width: 70%;
     border: 1px solid #ddd;
@@ -50,12 +50,12 @@ h2 {
     transition: border-color 0.3s ease;
 }
 
-.add-task-section input:focus {
+.dashboard-add-task-section input:focus {
     border-color: #4A90E2;
     outline: none;
 }
 
-.add-task-section button {
+.dashboard-add-task-section button {
     padding: 12px 20px;
     background-color: #4A90E2;
     color: white;
@@ -66,13 +66,13 @@ h2 {
     transition: background-color 0.3s ease, transform 0.2s;
 }
 
-.add-task-section button:hover {
+.dashboard-add-task-section button:hover {
     background-color: #357ABD;
     transform: translateY(-2px);
 }
 
 /* Liste des tâches */
-.task-item {
+.dashboard-task-item {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -85,12 +85,12 @@ h2 {
     transition: box-shadow 0.3s ease;
 }
 
-.task-item:hover {
+.dashboard-task-item:hover {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* Informations sur la tâche */
-.task-info {
+.dashboard-task-info {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -98,7 +98,7 @@ h2 {
     width: 100%;
 }
 
-.task-info input[type="text"] {
+.dashboard-task-info input[type="text"] {
     flex: 1;
     padding: 10px;
     border: 1px solid #ddd;
@@ -106,7 +106,7 @@ h2 {
     font-size: 16px;
 }
 
-.task-info input[type="checkbox"] {
+.dashboard-task-info input[type="checkbox"] {
     width: 20px;
     height: 20px;
     cursor: pointer;
@@ -114,14 +114,14 @@ h2 {
 }
 
 /* Actions sur les tâches */
-.task-actions {
+.dashboard-task-actions {
     display: flex;
     justify-content: flex-end;
     gap: 10px;
     width: 100%;
 }
 
-.task-actions button {
+.dashboard-task-actions button {
     background-color: #e0e0e0;
     border: none;
     padding: 8px 12px;
@@ -131,33 +131,33 @@ h2 {
     transition: background-color 0.3s ease;
 }
 
-.task-actions button:hover {
+.dashboard-task-actions button:hover {
     background-color: #c0c0c0;
 }
 
 /* Bouton de suppression en rouge */
-.delete-btn {
+.dashboard-delete-btn {
     background-color: #e53e3e;
     color: white;
     transition: background-color 0.3s ease;
 }
 
-.delete-btn:hover {
+.dashboard-delete-btn:hover {
     background-color: #d90429; /* Rouge plus accentué au survol */
 }
 
 /* Responsivité */
 @media (max-width: 768px) {
-    .dashboard-container {
+    .dashboard-custom-container {
         width: 90%;
         padding: 20px;
     }
 
-    .add-task-section input {
+    .dashboard-add-task-section input {
         width: 60%;
     }
 
-    .task-item {
+    .dashboard-task-item {
         padding: 10px;
     }
 }
