@@ -10,10 +10,6 @@
     transition: all 0.3s ease;
 }
 
-.dashboard-custom-container:hover {
-    transform: scale(1.02);
-}
-
 /* Titre */
 h2 {
     font-size: 28px;
