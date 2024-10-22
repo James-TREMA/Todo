@@ -75,14 +75,15 @@ h2 {
     justify-content: space-between;
     margin-bottom: 15px;
     padding: 15px;
-    background-color: #ffffff; /* Carte blanche contrastée avec le fond */
+    background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    transition: box-shadow 0.3s ease;
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .dashboard-task-item:hover {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: #f0f0f0;
 }
 
 /* Informations sur la tâche */
@@ -145,12 +146,12 @@ h2 {
 /* Responsivité */
 @media (max-width: 768px) {
     .dashboard-custom-container {
-        width: 90%;
+        width: 100%; /* Ajuste la largeur pour prendre tout l'espace disponible */
         padding: 20px;
     }
 
     .dashboard-add-task-section input {
-        width: 60%;
+        width: 100%; /* Utilise toute la largeur sur mobile */
     }
 
     .dashboard-task-item {

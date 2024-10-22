@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';  // Pour les directives communes comme *ngIf et *ngFor
-import { FormsModule } from '@angular/forms';  // Pour utiliser ngModel dans les formulaires
-import { Task } from './task.model';  // Import du modèle Task
+import { Task } from './task.model';
+import { TaskService } from '../services/task.service';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,41 +11,30 @@ import { Task } from './task.model';  // Import du modèle Task
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
+
 export class DashboardComponent {
-  username: string = 'Pierre';  // Nom d'utilisateur par défaut
-  newTaskTitle: string = '';  // Pour stocker la nouvelle tâche à ajouter
-  tasks: Task[] = [];  // Liste des tâches
+  username: string = 'Pierre'; 
+  newTaskTitle: string = ''; 
+  tasks: Task[] = [];
 
-  constructor() {
-    // Initialisation des tâches par défaut
-    this.tasks = [
-      new Task('est'),
-      new Task('jouer')
-    ];
+  constructor(private taskService: TaskService) {
+    this.tasks = this.taskService.getTasks();
   }
 
-  // Ajouter une nouvelle tâche
   addTask() {
-    if (this.newTaskTitle.trim()) {
-      this.tasks.push(new Task(this.newTaskTitle));
-      this.newTaskTitle = '';  // Réinitialiser le champ après ajout
-    }
+    this.taskService.addTask(this.newTaskTitle);
+    this.newTaskTitle = '';
   }
 
-  // Supprimer une tâche
   deleteTask(index: number) {
-    this.tasks.splice(index, 1);
+    this.taskService.deleteTask(index);
   }
 
-  // Modifier une tâche
   editTask(task: Task, newTitle: string) {
-    if (newTitle.trim()) {
-      task.title = newTitle;
-    }
+    this.taskService.editTask(task, newTitle);
   }
 
-  // Cocher/Décocher une tâche
   toggleTaskCompletion(task: Task) {
-    task.isCompleted = !task.isCompleted;
+    this.taskService.toggleTaskCompletion(task);
   }
 }
