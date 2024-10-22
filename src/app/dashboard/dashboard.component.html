@@ -1,1 +1,22 @@
-<p>dashboard works!</p>
+<div class="dashboard-container">
+    <h2>{{ username }}</h2>
+  
+    <!-- Section pour ajouter une nouvelle tâche -->
+    <div class="add-task-section">
+      <h4>Ajouter une tâche</h4>
+      <input [(ngModel)]="newTaskTitle" placeholder="Nouvelle tâche" />
+      <button (click)="addTask()">Ajouter</button>
+    </div>
+  
+    <!-- Liste des tâches -->
+    <div *ngFor="let task of tasks; let i = index" class="task-item">
+      <input type="checkbox" [(ngModel)]="task.isCompleted" (change)="toggleTaskCompletion(task)" />
+      
+      <!-- Titre de la tâche, éditable -->
+      <input type="text" [value]="task.title" (change)="editTask(task, $event.target.value)" />
+  
+      <!-- Boutons modifier et supprimer -->
+      <button (click)="editTask(task, task.title)">modifié</button>
+      <button (click)="deleteTask(i)">supprimé</button>
+    </div>
+</div>  

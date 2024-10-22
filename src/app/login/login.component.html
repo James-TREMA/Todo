@@ -1,16 +1,38 @@
 <div class="login-container">
     <h2>Connexion</h2>
-    <form (ngSubmit)="onLogin()">
-      <div>
+  
+    <!-- Formulaire de connexion -->
+    <form (ngSubmit)="onLogin()" #loginForm="ngForm">
+      
+      <!-- Champ du nom d'utilisateur -->
+      <div class="form-group">
         <label for="username">Nom d'utilisateur :</label>
-        <input type="text" id="username" [(ngModel)]="username" name="username" required>
+        <input type="text" id="username" [(ngModel)]="username" name="username" required #usernameField="ngModel">
+        <!-- Message d'erreur si le champ est vide -->
+        <div *ngIf="usernameField.invalid && usernameField.touched" class="error-message">
+          Le nom d'utilisateur est requis.
+        </div>
       </div>
-      <div>
+      
+      <!-- Champ du mot de passe -->
+      <div class="form-group">
         <label for="password">Mot de passe :</label>
-        <input type="password" id="password" [(ngModel)]="password" name="password" required>
+        <input type="password" id="password" [(ngModel)]="password" name="password" required #passwordField="ngModel">
+        <!-- Message d'erreur si le champ est vide -->
+        <div *ngIf="passwordField.invalid && passwordField.touched" class="error-message">
+          Le mot de passe est requis.
+        </div>
       </div>
-      <button type="submit">Se connecter</button>
-      <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+      
+      <!-- Message d'erreur de connexion -->
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
+      
+      <!-- Bouton de soumission -->
+      <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary">
+        Se connecter
+      </button>
     </form>
-</div>
+  </div>
   
