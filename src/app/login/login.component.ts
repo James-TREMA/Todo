@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';  // Import du RouterModule et du service Router
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, FormsModule, Router],  // Ajout du module Router pour rediriger
+  imports: [CommonModule, FormsModule, RouterModule],  // Import du RouterModule ici
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
