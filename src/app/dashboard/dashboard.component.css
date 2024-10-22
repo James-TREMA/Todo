@@ -1,13 +1,17 @@
-/* Conteneur principal avec design épuré */
+/* Conteneur principal avec design épuré et fond léger */
 .dashboard-container {
     width: 500px;
     margin: 50px auto;
     padding: 30px;
-    background-color: #fff;
+    background-color: #f5f5f5; /* Ajout d'un fond doux */
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     text-align: center;
     transition: all 0.3s ease;
+}
+
+.dashboard-container:hover {
+    transform: scale(1.02);
 }
 
 /* Titre */
@@ -75,7 +79,7 @@ h2 {
     justify-content: space-between;
     margin-bottom: 15px;
     padding: 15px;
-    background-color: #f9f9f9;
+    background-color: #ffffff; /* Carte blanche contrastée avec le fond */
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     transition: box-shadow 0.3s ease;
@@ -135,10 +139,11 @@ h2 {
 .delete-btn {
     background-color: #e53e3e;
     color: white;
+    transition: background-color 0.3s ease;
 }
 
 .delete-btn:hover {
-    background-color: #cc1f1f;
+    background-color: #d90429; /* Rouge plus accentué au survol */
 }
 
 /* Responsivité */
