@@ -13,7 +13,8 @@
     <!-- Liste des tâches -->
     <div *ngFor="let task of tasks; let i = index" class="dashboard-task-item">
         <div class="dashboard-task-info">
-            <input type="checkbox" [(ngModel)]="task.isCompleted" (change)="toggleTaskCompletion(task)" aria-label="Tâche complétée" />
+            <!-- Retrait de l'événement (change) pour la checkbox -->
+            <input type="checkbox" [(ngModel)]="task.isCompleted" aria-label="Tâche complétée" />
             <input type="text" [ngModel]="task.title" (ngModelChange)="editTask(task, $event)" aria-label="Modifier tâche" />
         </div>
         <div class="dashboard-task-actions">
