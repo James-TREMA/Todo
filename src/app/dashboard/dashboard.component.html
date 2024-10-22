@@ -1,23 +1,24 @@
-<div class="dashboard-container">
-    <h2>{{ username }}</h2>
-  
+<div class="dashboard-container" role="main" aria-labelledby="dashboard-title">
+    <h2 id="dashboard-title">{{ username }}</h2>
+
     <!-- Section pour ajouter une nouvelle tâche -->
-    <div class="add-task-section">
-      <h4>Ajouter une tâche</h4>
-      <input [(ngModel)]="newTaskTitle" placeholder="Nouvelle tâche" />
-      <button (click)="addTask()">Ajouter</button>
+    <div class="add-task-section" role="form">
+        <h4>Ajouter une tâche</h4>
+        <div class="input-wrapper">
+            <input [(ngModel)]="newTaskTitle" placeholder="Nouvelle tâche" aria-label="Nouvelle tâche" />
+            <button (click)="addTask()" aria-label="Ajouter une tâche">Ajouter</button>
+        </div>
     </div>
-  
+
     <!-- Liste des tâches -->
     <div *ngFor="let task of tasks; let i = index" class="task-item">
-      <input type="checkbox" [(ngModel)]="task.isCompleted" (change)="toggleTaskCompletion(task)" />
-      
-      <!-- Titre de la tâche, éditable -->
-      <input type="text" [ngModel]="task.title" (ngModelChange)="editTask(task, $event)" />
-  
-      <!-- Boutons modifier et supprimer -->
-      <button (click)="editTask(task, task.title)">modifié</button>
-      <button (click)="deleteTask(i)">supprimé</button>
+        <div class="task-info">
+            <input type="checkbox" [(ngModel)]="task.isCompleted" (change)="toggleTaskCompletion(task)" aria-label="Tâche complétée" />
+            <input type="text" [ngModel]="task.title" (ngModelChange)="editTask(task, $event)" aria-label="Modifier tâche" />
+        </div>
+        <div class="task-actions">
+            <button (click)="editTask(task, task.title)" aria-label="Modifier tâche">modifié</button>
+            <button (click)="deleteTask(i)" aria-label="Supprimer tâche" class="delete-btn">supprimé</button>
+        </div>
     </div>
-  </div>
-  
+</div>

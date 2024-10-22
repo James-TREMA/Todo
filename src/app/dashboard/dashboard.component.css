@@ -1,75 +1,158 @@
-/* Conteneur principal */
+/* Conteneur principal avec design épuré */
 .dashboard-container {
-    width: 400px;
+    width: 500px;
     margin: 50px auto;
-    padding: 20px;
-    background-color: #f0f0f0;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     text-align: center;
-  }
-  
-  /* Titre de la page */
-  h2 {
-    font-size: 24px;
+    transition: all 0.3s ease;
+}
+
+/* Titre */
+h2 {
+    font-size: 28px;
+    color: #333;
+    font-family: 'Montserrat', sans-serif;
     margin-bottom: 20px;
-  }
-  
-  /* Section d'ajout de tâche */
-  .add-task-section {
+    font-weight: bold;
+}
+
+/* Section d'ajout de tâche */
+.add-task-section {
     margin-bottom: 30px;
-  }
-  
-  .add-task-section input {
-    padding: 10px;
+    text-align: center;
+}
+
+.add-task-section h4 {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.input-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.add-task-section input {
+    padding: 12px;
     width: 70%;
-    margin-right: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .add-task-section button {
-    padding: 10px;
-    background-color: #007bff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.add-task-section input:focus {
+    border-color: #4A90E2;
+    outline: none;
+}
+
+.add-task-section button {
+    padding: 12px 20px;
+    background-color: #4A90E2;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
+    font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .add-task-section button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Liste des tâches */
-  .task-item {
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.add-task-section button:hover {
+    background-color: #357ABD;
+    transform: translateY(-2px);
+}
+
+/* Liste des tâches */
+.task-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease;
+}
+
+.task-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Informations sur la tâche */
+.task-info {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 10px;
     margin-bottom: 10px;
-  }
-  
-  .task-item input[type="text"] {
+    width: 100%;
+}
+
+.task-info input[type="text"] {
     flex: 1;
-    margin: 0 10px;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  /* Style des boutons modifier et supprimer */
-  button {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.task-info input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #4A90E2;
+}
+
+/* Actions sur les tâches */
+.task-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    width: 100%;
+}
+
+.task-actions button {
     background-color: #e0e0e0;
     border: none;
-    padding: 5px 10px;
-    margin-left: 10px;
+    padding: 8px 12px;
     cursor: pointer;
-    border-radius: 4px;
+    border-radius: 6px;
+    font-size: 14px;
     transition: background-color 0.3s ease;
-  }
-  
-  button:hover {
+}
+
+.task-actions button:hover {
     background-color: #c0c0c0;
-  }
-  
+}
+
+/* Bouton de suppression en rouge */
+.delete-btn {
+    background-color: #e53e3e;
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #cc1f1f;
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
+    .dashboard-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .add-task-section input {
+        width: 60%;
+    }
+
+    .task-item {
+        padding: 10px;
+    }
+}
