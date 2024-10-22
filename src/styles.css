@@ -47,3 +47,21 @@ input:focus, textarea:focus, select:focus {
     background-color: #4A90E2; /* Couleur de fond de la sélection */
     color: white; /* Couleur du texte sélectionné */
 }
+
+/* Supprime totalement le cadre bleu pour la checkbox même lorsqu'elle est focus */
+input[type="checkbox"]:focus {
+    outline: none; /* Supprime le contour par défaut */
+    box-shadow: none; /* Supprime les ombres */
+}
+
+/* Si tu veux quand même indiquer visuellement que la checkbox est focus mais de manière subtile */
+input[type="checkbox"]:focus-visible {
+    outline: none; /* Supprime le cadre */
+    box-shadow: none; /* Pas d'ombre */
+}
+
+/* Empêcher le comportement par défaut du focus de persister après un clic */
+input[type="checkbox"]:focus:not(:focus-visible) {
+    outline: none; /* Empêche le cadre lorsque l'élément perd le focus visuellement */
+    box-shadow: none; /* Supprime également l'ombre */
+}
