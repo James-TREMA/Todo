@@ -4,11 +4,12 @@ import { TaskService } from '../services/task.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { trigger, style, animate, transition } from '@angular/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, FormsModule],  // Ajout de FormsModule pour utiliser ngModel, et CommonModule pour les directives Angular
+  imports: [CommonModule, FormsModule, BrowserAnimationsModule],  // Ajout de FormsModule pour utiliser ngModel, et CommonModule pour les directives Angular
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
   animations: [
