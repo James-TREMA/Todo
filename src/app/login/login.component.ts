@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Router } from '@angular/router';  // Import du RouterModule et du service Router
+import { AuthService } from '../services/auth.service';  // Import du service d'authentification
 
 @Component({
   selector: 'app-login',
@@ -15,11 +16,11 @@ export class LoginComponent {
   password: string = '';
   errorMessage: string = '';
 
-  constructor(private router: Router) {}  // Injection du service Router
+  constructor(private router: Router, private authService: AuthService) {}  // Injection du service AuthService et Router
 
   onLogin() {
-    // Logique de gestion de la soumission du formulaire
-    if (this.username === 'Pierre' && this.password === 'okand') {
+    // Vérification des identifiants avec le service AuthService
+    if (this.authService.login(this.username, this.password)) {
       // Redirection vers le Dashboard après un login réussi
       this.router.navigate(['/dashboard']);
     } else {
